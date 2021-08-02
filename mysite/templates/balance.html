@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    
+<!------- Balance content -------->
+    
+<section class="balance">
+    
+
+    <div class="row">
+        <div class="balance-col">
+
+            <br><br><br>
+            <p> <p1>{{request.user.username}} </p1> Your current balance is: </p>
+            <p1>${{request.user.balance.number}}</p1>
+        </div>
+
+        <div class="balance-col">
+            <img src="{% static 'assets/balance.jpg' %}">
+        </div>
+
+    </div>    
+</section>
+
+{% endblock %}
+

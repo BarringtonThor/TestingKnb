@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<!------- Withdraw content -------->
+    
+<section class="withdraw">
+        <div class="row">
+            <div class="withdraw-col">
+
+                <br><br><br>
+
+                <form method="POST" >
+                {% csrf_token %}
+                {{ form }}
+            <input id="number" type="number" name="number" placeholder="Withdraw amount" min="1">
+                {% for message in messages %}
+
+            <div class="alert">
+               <p>{{ message }}</p> 
+            </div>
+                {% endfor %}
+                
+            <button type="submit" class="hero-btn sbmt">Withdraw</button>
+            </form> 
+            </div>
+
+            <div class="withdraw-col">
+                <img src="{% static 'assets/withdraw.jpg' %}">
+            </div>
+
+        </div>    
+</section>
+
+
+
+{% endblock %}
